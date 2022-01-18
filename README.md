@@ -1,5 +1,5 @@
-# dvc-project-template
-DVC project template
+# DVC-DL-TF
+DVC Project for Deeplearning CNN
 
 ## STEPS -
 

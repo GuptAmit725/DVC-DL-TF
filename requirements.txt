@@ -3,9 +3,8 @@ tqdm
 dvc
 pandas
 numpy
-PyYAML
 tensorflow==2.5.0
-
+-e .
 
 ### local packages -
 # -e . # << uncomment this to install from setup.py

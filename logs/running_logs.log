@@ -1,0 +1,61 @@
+[2022-01-18 22:54:51,648: INFO: stage_01_get_data]: 
+********************
+[2022-01-18 22:54:51,648: INFO: stage_01_get_data]: >>>>> stage STAGE_NAME started <<<<<
+[2022-01-18 22:54:51,650: INFO: common]: yaml file: configs/config.yaml loaded successfully
+[2022-01-18 22:54:51,655: INFO: common]: yaml file: params.yaml loaded successfully
+[2022-01-18 22:54:51,655: ERROR: stage_01_get_data]: 'course_download_dirs'
+Traceback (most recent call last):
+  File "src/stage_01_get_data.py", line 41, in <module>
+    get_data(config_path=parsed_args.config, params_path=parsed_args.params)
+  File "src/stage_01_get_data.py", line 24, in get_data
+    source_download_dirs = config['course_download_dirs']
+KeyError: 'course_download_dirs'
+[2022-01-18 22:55:23,367: INFO: stage_01_get_data]: 
+********************
+[2022-01-18 22:55:23,367: INFO: stage_01_get_data]: >>>>> stage STAGE_NAME started <<<<<
+[2022-01-18 22:55:23,368: INFO: common]: yaml file: configs/config.yaml loaded successfully
+[2022-01-18 22:55:23,369: INFO: common]: yaml file: params.yaml loaded successfully
+[2022-01-18 22:55:23,369: ERROR: stage_01_get_data]: 'sourse_download_dirs'
+Traceback (most recent call last):
+  File "src/stage_01_get_data.py", line 41, in <module>
+    get_data(config_path=parsed_args.config, params_path=parsed_args.params)
+  File "src/stage_01_get_data.py", line 24, in get_data
+    source_download_dirs = config['sourse_download_dirs']
+KeyError: 'sourse_download_dirs'
+[2022-01-18 22:56:18,336: INFO: stage_01_get_data]: 
+********************
+[2022-01-18 22:56:18,337: INFO: stage_01_get_data]: >>>>> stage STAGE_NAME started <<<<<
+[2022-01-18 22:56:18,338: INFO: common]: yaml file: configs/config.yaml loaded successfully
+[2022-01-18 22:56:18,338: INFO: common]: yaml file: params.yaml loaded successfully
+[2022-01-18 22:56:18,366: INFO: common]: created directory at: data/cat
+[2022-01-18 22:56:18,367: ERROR: stage_01_get_data]: [WinError 3] The system cannot find the path specified: '../outside_data/cat'
+Traceback (most recent call last):
+  File "src/stage_01_get_data.py", line 41, in <module>
+    get_data(config_path=parsed_args.config, params_path=parsed_args.params)
+  File "src/stage_01_get_data.py", line 29, in get_data
+    copy_files(source_download_dir, local_data_dir)
+  File "c:\users\amiti\desktop\mlops\dl\dvc-dl-tf\src\utils\common.py", line 22, in copy_files
+    list_of_files = os.listdir(source_download_dir)
+FileNotFoundError: [WinError 3] The system cannot find the path specified: '../outside_data/cat'
+[2022-01-18 23:12:22,600: INFO: stage_01_get_data]: 
+********************
+[2022-01-18 23:12:22,600: INFO: stage_01_get_data]: >>>>> stage STAGE_NAME started <<<<<
+[2022-01-18 23:12:22,601: INFO: common]: yaml file: configs/config.yaml loaded successfully
+[2022-01-18 23:12:22,602: INFO: common]: yaml file: params.yaml loaded successfully
+[2022-01-18 23:12:22,612: INFO: common]: created directory at: data/cat
+[2022-01-18 23:12:53,864: INFO: common]: Copying succeeded!
+[2022-01-18 23:12:53,866: INFO: common]: created directory at: data/dog
+[2022-01-18 23:13:55,934: INFO: common]: Copying succeeded!
+[2022-01-18 23:13:55,935: INFO: stage_01_get_data]: >>>>> stage STAGE_NAME completed!<<<<<
+
+[2022-01-18 23:38:57,954: INFO: stage_01_get_data]: 
+********************
+[2022-01-18 23:38:57,954: INFO: stage_01_get_data]: >>>>> stage STAGE_NAME started <<<<<
+[2022-01-18 23:38:57,956: INFO: common]: yaml file: configs/config.yaml loaded successfully
+[2022-01-18 23:38:57,956: INFO: common]: yaml file: params.yaml loaded successfully
+[2022-01-18 23:38:57,966: INFO: common]: created directory at: data/cat
+[2022-01-18 23:39:02,837: INFO: common]: Copying succeeded!
+[2022-01-18 23:39:02,838: INFO: common]: created directory at: data/dog
+[2022-01-18 23:39:12,691: INFO: common]: Copying succeeded!
+[2022-01-18 23:39:12,692: INFO: stage_01_get_data]: >>>>> stage STAGE_NAME completed!<<<<<
+

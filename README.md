@@ -7,7 +7,7 @@ DVC Project for Deeplearning CNN
 
 ### STEP 02- Clone the new repository
 
-### STEP 03- Create a conda environment after opening the repository in VSCODE
+### STEP 03- Create a conda environment after opening the repository in VSCODE/PyCharm
 
 ```bash
 conda create --prefix ./env python=3.7 -y

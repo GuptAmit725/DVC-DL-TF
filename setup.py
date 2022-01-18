@@ -7,7 +7,11 @@ with open("README.md", "r", encoding="utf-8") as f:
 REPO_NAME = "DVC-DL-TF"
 AUTHOR_USER_NAME = "GuptAmit725"
 SRC_REPO = "src"
-LIST_OF_REQUIREMENTS = []
+LIST_OF_REQUIREMENTS = [
+    'tqdm',
+    'dvc',
+    'tensorflow==2.5.0'
+]
 
 
 setup(

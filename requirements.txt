@@ -1,10 +1,6 @@
 ### dependency
 tqdm
 dvc
-pandas
-numpy
 tensorflow==2.5.0
+black
 -e .
-
-### local packages -
-# -e . # << uncomment this to install from setup.py

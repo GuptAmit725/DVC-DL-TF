@@ -581,3 +581,14 @@ NameError: name 'callbacks_dir' is not defined
 [2022-01-19 16:40:25,749: INFO: callbacks]: Checkpoint callbacks are saved at artifacts\callbacks\tensorboard.cb.cb as binay file.
 [2022-01-19 16:40:25,749: INFO: stage_03_prepare_callback]: >>>>> stage 2 completed!<<<<<
 
+[2022-01-19 16:44:44,192: INFO: stage_03_prepare_callback]: 
+********************
+[2022-01-19 16:44:44,192: INFO: stage_03_prepare_callback]: >>>>> stage prepare_callback started <<<<<
+[2022-01-19 16:44:44,192: INFO: common]: yaml file: configs/config.yaml loaded successfully
+[2022-01-19 16:44:44,192: INFO: common]: created directory at: artifacts\tensorboard_log_dir
+[2022-01-19 16:44:44,192: INFO: common]: created directory at: artifacts\checkpoints
+[2022-01-19 16:44:44,192: INFO: common]: created directory at: artifacts\callbacks
+[2022-01-19 16:44:44,224: INFO: callbacks]: Tensorboard callback is saved at artifacts\callbacks\tensorboard.cb.cb
+[2022-01-19 16:44:44,224: INFO: callbacks]: Checkpoint callbacks are saved at artifacts\callbacks\checkpoint.cb.cb as binay file.
+[2022-01-19 16:44:44,224: INFO: stage_03_prepare_callback]: >>>>> stage 2 completed!<<<<<
+

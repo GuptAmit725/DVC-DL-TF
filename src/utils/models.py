@@ -3,6 +3,14 @@ import logging
 import io
 
 
+def load_models(model_path:str)->tf.keras.models.Model:
+    model = tf.keras.models.load_model(model_path)
+    logging.info(f"Untrained model is read from : {model_path}")
+    logging.info(f"Untrained full model summary is {get_model_summary(model)}")
+
+    return model
+
+
 def get_model_summary(model):
     with io.StringIO() as stream:
         model.summary(

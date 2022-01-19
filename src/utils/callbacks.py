@@ -31,3 +31,14 @@ def create_checkpointing_callbacks(callbacks_dir:str,checkpoint_dir:str)->None:
     ckpt_path = os.path.join(callbacks_dir, "checkpoint.cb.cb")
     joblib.dump(checkpoint_callback, ckpt_path)
     logging.info(f"Checkpoint callbacks are saved at {ckpt_path} as binay file.")
+
+def get_callbacks(callback_dir_path:str):
+    callback_path = [
+        os.path.join(callback_dir_path,pickle_file) for pickle_file in os.listdir(callback_dir_path) if pickle_file.endswith(".cb")
+    ]
+    callbacks = [
+        joblib.load(path) for path in callback_path
+    ]
+    logging.info(f"Saved callbacks are now ready for use.")
+    return callbacks
+

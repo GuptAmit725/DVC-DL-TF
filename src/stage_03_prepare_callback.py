@@ -9,7 +9,7 @@ from src.utils.common import read_yaml, create_directories
 from src.utils.callbacks import create_and_save_tb_callbacks, create_checkpointing_callbacks
 
 
-STAGE = "prepare_callback" ## <<< change stage name
+STAGE = "prepare model" ## <<< change stage name
 
 logging.basicConfig(
     filename=os.path.join("logs", 'running_logs.log'),

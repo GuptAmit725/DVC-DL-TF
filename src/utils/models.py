@@ -1,7 +1,8 @@
 import tensorflow as tf
 import logging
 import io
-
+import os
+from src.utils.callbacks import get_timestamp
 
 def load_models(model_path:str)->tf.keras.models.Model:
     model = tf.keras.models.load_model(model_path)
@@ -61,3 +62,12 @@ def prepare_full_model( base_model,
     logging.info(f"Custom layers to base model added and compiled.")
 
     return full_model
+
+def get_unique_path_to_save_model(
+        trained_model_dir:str,
+        model_name:str="model.h5")->str:
+
+    timestamp = get_timestamp(model_name)
+    unique_model_name = f"{timestamp}_.h5"
+    unique_model_path = os.path.join(trained_model_dir, unique_model_name)
+    return unique_model_path

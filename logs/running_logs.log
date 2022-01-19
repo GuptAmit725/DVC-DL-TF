@@ -1099,3 +1099,742 @@ _________________________________________________________________
 
 [2022-01-19 21:07:43,968: INFO: stage_04_train]: >>>>> stage 3 completed!<<<<<
 
+[2022-01-19 21:20:03,963: INFO: stage_04_train]: 
+********************
+[2022-01-19 21:20:03,963: INFO: stage_04_train]: >>>>> stage prepare_callback started <<<<<
+[2022-01-19 21:20:03,963: INFO: common]: yaml file: configs/config.yaml loaded successfully
+[2022-01-19 21:20:03,963: INFO: common]: yaml file: params.yaml loaded successfully
+[2022-01-19 21:20:03,963: INFO: common]: created directory at: artifacts\model
+[2022-01-19 21:20:05,989: INFO: models]: Untrained model is read from : artifacts\base_model\updated_base_model.h5
+[2022-01-19 21:20:05,991: INFO: models]: Untrained full model summary is Model: "model"
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #   
+=================================================================
+input_1 (InputLayer)         [(None, 224, 224, 3)]     0         
+_________________________________________________________________
+block1_conv1 (Conv2D)        (None, 224, 224, 64)      1792      
+_________________________________________________________________
+block1_conv2 (Conv2D)        (None, 224, 224, 64)      36928     
+_________________________________________________________________
+block1_pool (MaxPooling2D)   (None, 112, 112, 64)      0         
+_________________________________________________________________
+block2_conv1 (Conv2D)        (None, 112, 112, 128)     73856     
+_________________________________________________________________
+block2_conv2 (Conv2D)        (None, 112, 112, 128)     147584    
+_________________________________________________________________
+block2_pool (MaxPooling2D)   (None, 56, 56, 128)       0         
+_________________________________________________________________
+block3_conv1 (Conv2D)        (None, 56, 56, 256)       295168    
+_________________________________________________________________
+block3_conv2 (Conv2D)        (None, 56, 56, 256)       590080    
+_________________________________________________________________
+block3_conv3 (Conv2D)        (None, 56, 56, 256)       590080    
+_________________________________________________________________
+block3_pool (MaxPooling2D)   (None, 28, 28, 256)       0         
+_________________________________________________________________
+block4_conv1 (Conv2D)        (None, 28, 28, 512)       1180160   
+_________________________________________________________________
+block4_conv2 (Conv2D)        (None, 28, 28, 512)       2359808   
+_________________________________________________________________
+block4_conv3 (Conv2D)        (None, 28, 28, 512)       2359808   
+_________________________________________________________________
+block4_pool (MaxPooling2D)   (None, 14, 14, 512)       0         
+_________________________________________________________________
+block5_conv1 (Conv2D)        (None, 14, 14, 512)       2359808   
+_________________________________________________________________
+block5_conv2 (Conv2D)        (None, 14, 14, 512)       2359808   
+_________________________________________________________________
+block5_conv3 (Conv2D)        (None, 14, 14, 512)       2359808   
+_________________________________________________________________
+block5_pool (MaxPooling2D)   (None, 7, 7, 512)         0         
+_________________________________________________________________
+flatten (Flatten)            (None, 25088)             0         
+_________________________________________________________________
+dense (Dense)                (None, 2)                 50178     
+=================================================================
+Total params: 14,764,866
+Trainable params: 50,178
+Non-trainable params: 14,714,688
+_________________________________________________________________
+
+[2022-01-19 21:20:07,145: ERROR: stage_04_train]: fit() got an unexpected keyword argument 'steps_per_epochs'
+Traceback (most recent call last):
+  File "src/stage_04_train.py", line 77, in <module>
+    train_model(config_path=parsed_args.config, params_path=parsed_args.params)
+  File "src/stage_04_train.py", line 62, in train_model
+    callbacks=callbacks
+TypeError: fit() got an unexpected keyword argument 'steps_per_epochs'
+[2022-01-19 21:20:45,284: INFO: stage_04_train]: 
+********************
+[2022-01-19 21:20:45,284: INFO: stage_04_train]: >>>>> stage prepare_callback started <<<<<
+[2022-01-19 21:20:45,285: INFO: common]: yaml file: configs/config.yaml loaded successfully
+[2022-01-19 21:20:45,285: INFO: common]: yaml file: params.yaml loaded successfully
+[2022-01-19 21:20:45,285: INFO: common]: created directory at: artifacts\model
+[2022-01-19 21:20:47,250: INFO: models]: Untrained model is read from : artifacts\base_model\updated_base_model.h5
+[2022-01-19 21:20:47,250: INFO: models]: Untrained full model summary is Model: "model"
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #   
+=================================================================
+input_1 (InputLayer)         [(None, 224, 224, 3)]     0         
+_________________________________________________________________
+block1_conv1 (Conv2D)        (None, 224, 224, 64)      1792      
+_________________________________________________________________
+block1_conv2 (Conv2D)        (None, 224, 224, 64)      36928     
+_________________________________________________________________
+block1_pool (MaxPooling2D)   (None, 112, 112, 64)      0         
+_________________________________________________________________
+block2_conv1 (Conv2D)        (None, 112, 112, 128)     73856     
+_________________________________________________________________
+block2_conv2 (Conv2D)        (None, 112, 112, 128)     147584    
+_________________________________________________________________
+block2_pool (MaxPooling2D)   (None, 56, 56, 128)       0         
+_________________________________________________________________
+block3_conv1 (Conv2D)        (None, 56, 56, 256)       295168    
+_________________________________________________________________
+block3_conv2 (Conv2D)        (None, 56, 56, 256)       590080    
+_________________________________________________________________
+block3_conv3 (Conv2D)        (None, 56, 56, 256)       590080    
+_________________________________________________________________
+block3_pool (MaxPooling2D)   (None, 28, 28, 256)       0         
+_________________________________________________________________
+block4_conv1 (Conv2D)        (None, 28, 28, 512)       1180160   
+_________________________________________________________________
+block4_conv2 (Conv2D)        (None, 28, 28, 512)       2359808   
+_________________________________________________________________
+block4_conv3 (Conv2D)        (None, 28, 28, 512)       2359808   
+_________________________________________________________________
+block4_pool (MaxPooling2D)   (None, 14, 14, 512)       0         
+_________________________________________________________________
+block5_conv1 (Conv2D)        (None, 14, 14, 512)       2359808   
+_________________________________________________________________
+block5_conv2 (Conv2D)        (None, 14, 14, 512)       2359808   
+_________________________________________________________________
+block5_conv3 (Conv2D)        (None, 14, 14, 512)       2359808   
+_________________________________________________________________
+block5_pool (MaxPooling2D)   (None, 7, 7, 512)         0         
+_________________________________________________________________
+flatten (Flatten)            (None, 25088)             0         
+_________________________________________________________________
+dense (Dense)                (None, 2)                 50178     
+=================================================================
+Total params: 14,764,866
+Trainable params: 50,178
+Non-trainable params: 14,714,688
+_________________________________________________________________
+
+[2022-01-19 21:20:48,324: ERROR: stage_04_train]: could not broadcast input array from shape (224,224,3) into shape (224,224,3,3)
+Traceback (most recent call last):
+  File "src/stage_04_train.py", line 77, in <module>
+    train_model(config_path=parsed_args.config, params_path=parsed_args.params)
+  File "src/stage_04_train.py", line 62, in train_model
+    callbacks=callbacks
+  File "C:\Users\amiti\Desktop\MLops\DL\DVC-DL-TF\env\lib\site-packages\tensorflow\python\keras\engine\training.py", line 1147, in fit
+    steps_per_execution=self._steps_per_execution)
+  File "C:\Users\amiti\Desktop\MLops\DL\DVC-DL-TF\env\lib\site-packages\tensorflow\python\keras\engine\data_adapter.py", line 1364, in get_data_handler
+    return DataHandler(*args, **kwargs)
+  File "C:\Users\amiti\Desktop\MLops\DL\DVC-DL-TF\env\lib\site-packages\tensorflow\python\keras\engine\data_adapter.py", line 1166, in __init__
+    model=model)
+  File "C:\Users\amiti\Desktop\MLops\DL\DVC-DL-TF\env\lib\site-packages\tensorflow\python\keras\engine\data_adapter.py", line 939, in __init__
+    **kwargs)
+  File "C:\Users\amiti\Desktop\MLops\DL\DVC-DL-TF\env\lib\site-packages\tensorflow\python\keras\engine\data_adapter.py", line 809, in __init__
+    peek, x = self._peek_and_restore(x)
+  File "C:\Users\amiti\Desktop\MLops\DL\DVC-DL-TF\env\lib\site-packages\tensorflow\python\keras\engine\data_adapter.py", line 943, in _peek_and_restore
+    return x[0], x
+  File "C:\Users\amiti\Desktop\MLops\DL\DVC-DL-TF\env\lib\site-packages\keras_preprocessing\image\iterator.py", line 65, in __getitem__
+    return self._get_batches_of_transformed_samples(index_array)
+  File "C:\Users\amiti\Desktop\MLops\DL\DVC-DL-TF\env\lib\site-packages\keras_preprocessing\image\iterator.py", line 240, in _get_batches_of_transformed_samples
+    batch_x[i] = x
+ValueError: could not broadcast input array from shape (224,224,3) into shape (224,224,3,3)
+[2022-01-19 21:22:11,975: INFO: stage_04_train]: 
+********************
+[2022-01-19 21:22:11,975: INFO: stage_04_train]: >>>>> stage prepare_callback started <<<<<
+[2022-01-19 21:22:11,975: INFO: common]: yaml file: configs/config.yaml loaded successfully
+[2022-01-19 21:22:11,990: INFO: common]: yaml file: params.yaml loaded successfully
+[2022-01-19 21:22:11,990: INFO: common]: created directory at: artifacts\model
+[2022-01-19 21:22:13,936: INFO: models]: Untrained model is read from : artifacts\base_model\updated_base_model.h5
+[2022-01-19 21:22:13,936: INFO: models]: Untrained full model summary is Model: "model"
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #   
+=================================================================
+input_1 (InputLayer)         [(None, 224, 224, 3)]     0         
+_________________________________________________________________
+block1_conv1 (Conv2D)        (None, 224, 224, 64)      1792      
+_________________________________________________________________
+block1_conv2 (Conv2D)        (None, 224, 224, 64)      36928     
+_________________________________________________________________
+block1_pool (MaxPooling2D)   (None, 112, 112, 64)      0         
+_________________________________________________________________
+block2_conv1 (Conv2D)        (None, 112, 112, 128)     73856     
+_________________________________________________________________
+block2_conv2 (Conv2D)        (None, 112, 112, 128)     147584    
+_________________________________________________________________
+block2_pool (MaxPooling2D)   (None, 56, 56, 128)       0         
+_________________________________________________________________
+block3_conv1 (Conv2D)        (None, 56, 56, 256)       295168    
+_________________________________________________________________
+block3_conv2 (Conv2D)        (None, 56, 56, 256)       590080    
+_________________________________________________________________
+block3_conv3 (Conv2D)        (None, 56, 56, 256)       590080    
+_________________________________________________________________
+block3_pool (MaxPooling2D)   (None, 28, 28, 256)       0         
+_________________________________________________________________
+block4_conv1 (Conv2D)        (None, 28, 28, 512)       1180160   
+_________________________________________________________________
+block4_conv2 (Conv2D)        (None, 28, 28, 512)       2359808   
+_________________________________________________________________
+block4_conv3 (Conv2D)        (None, 28, 28, 512)       2359808   
+_________________________________________________________________
+block4_pool (MaxPooling2D)   (None, 14, 14, 512)       0         
+_________________________________________________________________
+block5_conv1 (Conv2D)        (None, 14, 14, 512)       2359808   
+_________________________________________________________________
+block5_conv2 (Conv2D)        (None, 14, 14, 512)       2359808   
+_________________________________________________________________
+block5_conv3 (Conv2D)        (None, 14, 14, 512)       2359808   
+_________________________________________________________________
+block5_pool (MaxPooling2D)   (None, 7, 7, 512)         0         
+_________________________________________________________________
+flatten (Flatten)            (None, 25088)             0         
+_________________________________________________________________
+dense (Dense)                (None, 2)                 50178     
+=================================================================
+Total params: 14,764,866
+Trainable params: 50,178
+Non-trainable params: 14,714,688
+_________________________________________________________________
+
+[2022-01-19 21:22:15,673: ERROR: stage_04_train]: 'function' object has no attribute 'set_model'
+Traceback (most recent call last):
+  File "src/stage_04_train.py", line 77, in <module>
+    train_model(config_path=parsed_args.config, params_path=parsed_args.params)
+  File "src/stage_04_train.py", line 62, in train_model
+    callbacks=callbacks
+  File "C:\Users\amiti\Desktop\MLops\DL\DVC-DL-TF\env\lib\site-packages\tensorflow\python\keras\engine\training.py", line 1158, in fit
+    steps=data_handler.inferred_steps)
+  File "C:\Users\amiti\Desktop\MLops\DL\DVC-DL-TF\env\lib\site-packages\tensorflow\python\keras\callbacks.py", line 231, in __init__
+    self.set_model(model)
+  File "C:\Users\amiti\Desktop\MLops\DL\DVC-DL-TF\env\lib\site-packages\tensorflow\python\keras\callbacks.py", line 307, in set_model
+    callback.set_model(model)
+AttributeError: 'function' object has no attribute 'set_model'
+[2022-01-19 21:23:13,303: INFO: stage_04_train]: 
+********************
+[2022-01-19 21:23:13,303: INFO: stage_04_train]: >>>>> stage prepare_callback started <<<<<
+[2022-01-19 21:23:13,318: INFO: common]: yaml file: configs/config.yaml loaded successfully
+[2022-01-19 21:23:13,318: INFO: common]: yaml file: params.yaml loaded successfully
+[2022-01-19 21:23:13,318: INFO: common]: created directory at: artifacts\model
+[2022-01-19 21:23:15,215: INFO: models]: Untrained model is read from : artifacts\base_model\updated_base_model.h5
+[2022-01-19 21:23:15,215: INFO: models]: Untrained full model summary is Model: "model"
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #   
+=================================================================
+input_1 (InputLayer)         [(None, 224, 224, 3)]     0         
+_________________________________________________________________
+block1_conv1 (Conv2D)        (None, 224, 224, 64)      1792      
+_________________________________________________________________
+block1_conv2 (Conv2D)        (None, 224, 224, 64)      36928     
+_________________________________________________________________
+block1_pool (MaxPooling2D)   (None, 112, 112, 64)      0         
+_________________________________________________________________
+block2_conv1 (Conv2D)        (None, 112, 112, 128)     73856     
+_________________________________________________________________
+block2_conv2 (Conv2D)        (None, 112, 112, 128)     147584    
+_________________________________________________________________
+block2_pool (MaxPooling2D)   (None, 56, 56, 128)       0         
+_________________________________________________________________
+block3_conv1 (Conv2D)        (None, 56, 56, 256)       295168    
+_________________________________________________________________
+block3_conv2 (Conv2D)        (None, 56, 56, 256)       590080    
+_________________________________________________________________
+block3_conv3 (Conv2D)        (None, 56, 56, 256)       590080    
+_________________________________________________________________
+block3_pool (MaxPooling2D)   (None, 28, 28, 256)       0         
+_________________________________________________________________
+block4_conv1 (Conv2D)        (None, 28, 28, 512)       1180160   
+_________________________________________________________________
+block4_conv2 (Conv2D)        (None, 28, 28, 512)       2359808   
+_________________________________________________________________
+block4_conv3 (Conv2D)        (None, 28, 28, 512)       2359808   
+_________________________________________________________________
+block4_pool (MaxPooling2D)   (None, 14, 14, 512)       0         
+_________________________________________________________________
+block5_conv1 (Conv2D)        (None, 14, 14, 512)       2359808   
+_________________________________________________________________
+block5_conv2 (Conv2D)        (None, 14, 14, 512)       2359808   
+_________________________________________________________________
+block5_conv3 (Conv2D)        (None, 14, 14, 512)       2359808   
+_________________________________________________________________
+block5_pool (MaxPooling2D)   (None, 7, 7, 512)         0         
+_________________________________________________________________
+flatten (Flatten)            (None, 25088)             0         
+_________________________________________________________________
+dense (Dense)                (None, 2)                 50178     
+=================================================================
+Total params: 14,764,866
+Trainable params: 50,178
+Non-trainable params: 14,714,688
+_________________________________________________________________
+
+[2022-01-19 21:23:16,266: INFO: callbacks]: Saved callbacks are now ready for use.
+[2022-01-19 21:24:20,570: INFO: stage_04_train]: 
+********************
+[2022-01-19 21:24:20,570: INFO: stage_04_train]: >>>>> stage prepare_callback started <<<<<
+[2022-01-19 21:24:20,570: INFO: common]: yaml file: configs/config.yaml loaded successfully
+[2022-01-19 21:24:20,570: INFO: common]: yaml file: params.yaml loaded successfully
+[2022-01-19 21:24:20,570: INFO: common]: created directory at: artifacts\model
+[2022-01-19 21:24:22,538: INFO: models]: Untrained model is read from : artifacts\base_model\updated_base_model.h5
+[2022-01-19 21:24:22,538: INFO: models]: Untrained full model summary is Model: "model"
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #   
+=================================================================
+input_1 (InputLayer)         [(None, 224, 224, 3)]     0         
+_________________________________________________________________
+block1_conv1 (Conv2D)        (None, 224, 224, 64)      1792      
+_________________________________________________________________
+block1_conv2 (Conv2D)        (None, 224, 224, 64)      36928     
+_________________________________________________________________
+block1_pool (MaxPooling2D)   (None, 112, 112, 64)      0         
+_________________________________________________________________
+block2_conv1 (Conv2D)        (None, 112, 112, 128)     73856     
+_________________________________________________________________
+block2_conv2 (Conv2D)        (None, 112, 112, 128)     147584    
+_________________________________________________________________
+block2_pool (MaxPooling2D)   (None, 56, 56, 128)       0         
+_________________________________________________________________
+block3_conv1 (Conv2D)        (None, 56, 56, 256)       295168    
+_________________________________________________________________
+block3_conv2 (Conv2D)        (None, 56, 56, 256)       590080    
+_________________________________________________________________
+block3_conv3 (Conv2D)        (None, 56, 56, 256)       590080    
+_________________________________________________________________
+block3_pool (MaxPooling2D)   (None, 28, 28, 256)       0         
+_________________________________________________________________
+block4_conv1 (Conv2D)        (None, 28, 28, 512)       1180160   
+_________________________________________________________________
+block4_conv2 (Conv2D)        (None, 28, 28, 512)       2359808   
+_________________________________________________________________
+block4_conv3 (Conv2D)        (None, 28, 28, 512)       2359808   
+_________________________________________________________________
+block4_pool (MaxPooling2D)   (None, 14, 14, 512)       0         
+_________________________________________________________________
+block5_conv1 (Conv2D)        (None, 14, 14, 512)       2359808   
+_________________________________________________________________
+block5_conv2 (Conv2D)        (None, 14, 14, 512)       2359808   
+_________________________________________________________________
+block5_conv3 (Conv2D)        (None, 14, 14, 512)       2359808   
+_________________________________________________________________
+block5_pool (MaxPooling2D)   (None, 7, 7, 512)         0         
+_________________________________________________________________
+flatten (Flatten)            (None, 25088)             0         
+_________________________________________________________________
+dense (Dense)                (None, 2)                 50178     
+=================================================================
+Total params: 14,764,866
+Trainable params: 50,178
+Non-trainable params: 14,714,688
+_________________________________________________________________
+
+[2022-01-19 21:24:23,583: INFO: callbacks]: Saved callbacks are now ready for use.
+[2022-01-19 21:39:06,746: INFO: stage_04_train]: >>>>> stage 3 completed!<<<<<
+
+[2022-01-19 21:53:32,589: INFO: stage_04_train]: 
+********************
+[2022-01-19 21:53:32,589: INFO: stage_04_train]: >>>>> stage prepare_callback started <<<<<
+[2022-01-19 21:53:32,597: INFO: common]: yaml file: configs/config.yaml loaded successfully
+[2022-01-19 21:53:32,597: INFO: common]: yaml file: params.yaml loaded successfully
+[2022-01-19 21:53:32,597: INFO: common]: created directory at: artifacts\model
+[2022-01-19 21:53:34,659: INFO: models]: Untrained model is read from : artifacts\base_model\updated_base_model.h5
+[2022-01-19 21:53:34,659: INFO: models]: Untrained full model summary is Model: "model"
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #   
+=================================================================
+input_1 (InputLayer)         [(None, 224, 224, 3)]     0         
+_________________________________________________________________
+block1_conv1 (Conv2D)        (None, 224, 224, 64)      1792      
+_________________________________________________________________
+block1_conv2 (Conv2D)        (None, 224, 224, 64)      36928     
+_________________________________________________________________
+block1_pool (MaxPooling2D)   (None, 112, 112, 64)      0         
+_________________________________________________________________
+block2_conv1 (Conv2D)        (None, 112, 112, 128)     73856     
+_________________________________________________________________
+block2_conv2 (Conv2D)        (None, 112, 112, 128)     147584    
+_________________________________________________________________
+block2_pool (MaxPooling2D)   (None, 56, 56, 128)       0         
+_________________________________________________________________
+block3_conv1 (Conv2D)        (None, 56, 56, 256)       295168    
+_________________________________________________________________
+block3_conv2 (Conv2D)        (None, 56, 56, 256)       590080    
+_________________________________________________________________
+block3_conv3 (Conv2D)        (None, 56, 56, 256)       590080    
+_________________________________________________________________
+block3_pool (MaxPooling2D)   (None, 28, 28, 256)       0         
+_________________________________________________________________
+block4_conv1 (Conv2D)        (None, 28, 28, 512)       1180160   
+_________________________________________________________________
+block4_conv2 (Conv2D)        (None, 28, 28, 512)       2359808   
+_________________________________________________________________
+block4_conv3 (Conv2D)        (None, 28, 28, 512)       2359808   
+_________________________________________________________________
+block4_pool (MaxPooling2D)   (None, 14, 14, 512)       0         
+_________________________________________________________________
+block5_conv1 (Conv2D)        (None, 14, 14, 512)       2359808   
+_________________________________________________________________
+block5_conv2 (Conv2D)        (None, 14, 14, 512)       2359808   
+_________________________________________________________________
+block5_conv3 (Conv2D)        (None, 14, 14, 512)       2359808   
+_________________________________________________________________
+block5_pool (MaxPooling2D)   (None, 7, 7, 512)         0         
+_________________________________________________________________
+flatten (Flatten)            (None, 25088)             0         
+_________________________________________________________________
+dense (Dense)                (None, 2)                 50178     
+=================================================================
+Total params: 14,764,866
+Trainable params: 50,178
+Non-trainable params: 14,714,688
+_________________________________________________________________
+
+[2022-01-19 21:53:35,875: INFO: callbacks]: Saved callbacks are now ready for use.
+[2022-01-19 21:54:32,560: INFO: stage_04_train]: 
+********************
+[2022-01-19 21:54:32,560: INFO: stage_04_train]: >>>>> stage prepare_callback started <<<<<
+[2022-01-19 21:54:32,560: INFO: common]: yaml file: configs/config.yaml loaded successfully
+[2022-01-19 21:54:32,560: INFO: common]: yaml file: params.yaml loaded successfully
+[2022-01-19 21:54:32,560: INFO: common]: created directory at: artifacts\model
+[2022-01-19 21:54:34,394: INFO: models]: Untrained model is read from : artifacts\base_model\updated_base_model.h5
+[2022-01-19 21:54:34,399: INFO: models]: Untrained full model summary is Model: "model"
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #   
+=================================================================
+input_1 (InputLayer)         [(None, 224, 224, 3)]     0         
+_________________________________________________________________
+block1_conv1 (Conv2D)        (None, 224, 224, 64)      1792      
+_________________________________________________________________
+block1_conv2 (Conv2D)        (None, 224, 224, 64)      36928     
+_________________________________________________________________
+block1_pool (MaxPooling2D)   (None, 112, 112, 64)      0         
+_________________________________________________________________
+block2_conv1 (Conv2D)        (None, 112, 112, 128)     73856     
+_________________________________________________________________
+block2_conv2 (Conv2D)        (None, 112, 112, 128)     147584    
+_________________________________________________________________
+block2_pool (MaxPooling2D)   (None, 56, 56, 128)       0         
+_________________________________________________________________
+block3_conv1 (Conv2D)        (None, 56, 56, 256)       295168    
+_________________________________________________________________
+block3_conv2 (Conv2D)        (None, 56, 56, 256)       590080    
+_________________________________________________________________
+block3_conv3 (Conv2D)        (None, 56, 56, 256)       590080    
+_________________________________________________________________
+block3_pool (MaxPooling2D)   (None, 28, 28, 256)       0         
+_________________________________________________________________
+block4_conv1 (Conv2D)        (None, 28, 28, 512)       1180160   
+_________________________________________________________________
+block4_conv2 (Conv2D)        (None, 28, 28, 512)       2359808   
+_________________________________________________________________
+block4_conv3 (Conv2D)        (None, 28, 28, 512)       2359808   
+_________________________________________________________________
+block4_pool (MaxPooling2D)   (None, 14, 14, 512)       0         
+_________________________________________________________________
+block5_conv1 (Conv2D)        (None, 14, 14, 512)       2359808   
+_________________________________________________________________
+block5_conv2 (Conv2D)        (None, 14, 14, 512)       2359808   
+_________________________________________________________________
+block5_conv3 (Conv2D)        (None, 14, 14, 512)       2359808   
+_________________________________________________________________
+block5_pool (MaxPooling2D)   (None, 7, 7, 512)         0         
+_________________________________________________________________
+flatten (Flatten)            (None, 25088)             0         
+_________________________________________________________________
+dense (Dense)                (None, 2)                 50178     
+=================================================================
+Total params: 14,764,866
+Trainable params: 50,178
+Non-trainable params: 14,714,688
+_________________________________________________________________
+
+[2022-01-19 21:54:35,621: INFO: callbacks]: Saved callbacks are now ready for use.
+[2022-01-19 22:00:55,864: ERROR: stage_04_train]: name 'model_name' is not defined
+Traceback (most recent call last):
+  File "src/stage_04_train.py", line 80, in <module>
+    train_model(config_path=parsed_args.config, params_path=parsed_args.params)
+  File "src/stage_04_train.py", line 67, in train_model
+    model_file_path = get_unique_path_to_save_model(trained_model_dir)
+  File "c:\users\amiti\desktop\mlops\dl\dvc-dl-tf\src\utils\models.py", line 69, in get_unique_path_to_save_model
+    timestamp = get_timestamp(model_name)
+NameError: name 'model_name' is not defined
+[2022-01-19 22:04:20,577: INFO: stage_04_train]: 
+********************
+[2022-01-19 22:04:20,577: INFO: stage_04_train]: >>>>> stage prepare_callback started <<<<<
+[2022-01-19 22:04:20,577: INFO: common]: yaml file: configs/config.yaml loaded successfully
+[2022-01-19 22:04:20,586: INFO: common]: yaml file: params.yaml loaded successfully
+[2022-01-19 22:04:20,586: INFO: common]: created directory at: artifacts\model
+[2022-01-19 22:04:22,586: INFO: models]: Untrained model is read from : artifacts\base_model\updated_base_model.h5
+[2022-01-19 22:04:22,586: INFO: models]: Untrained full model summary is Model: "model"
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #   
+=================================================================
+input_1 (InputLayer)         [(None, 224, 224, 3)]     0         
+_________________________________________________________________
+block1_conv1 (Conv2D)        (None, 224, 224, 64)      1792      
+_________________________________________________________________
+block1_conv2 (Conv2D)        (None, 224, 224, 64)      36928     
+_________________________________________________________________
+block1_pool (MaxPooling2D)   (None, 112, 112, 64)      0         
+_________________________________________________________________
+block2_conv1 (Conv2D)        (None, 112, 112, 128)     73856     
+_________________________________________________________________
+block2_conv2 (Conv2D)        (None, 112, 112, 128)     147584    
+_________________________________________________________________
+block2_pool (MaxPooling2D)   (None, 56, 56, 128)       0         
+_________________________________________________________________
+block3_conv1 (Conv2D)        (None, 56, 56, 256)       295168    
+_________________________________________________________________
+block3_conv2 (Conv2D)        (None, 56, 56, 256)       590080    
+_________________________________________________________________
+block3_conv3 (Conv2D)        (None, 56, 56, 256)       590080    
+_________________________________________________________________
+block3_pool (MaxPooling2D)   (None, 28, 28, 256)       0         
+_________________________________________________________________
+block4_conv1 (Conv2D)        (None, 28, 28, 512)       1180160   
+_________________________________________________________________
+block4_conv2 (Conv2D)        (None, 28, 28, 512)       2359808   
+_________________________________________________________________
+block4_conv3 (Conv2D)        (None, 28, 28, 512)       2359808   
+_________________________________________________________________
+block4_pool (MaxPooling2D)   (None, 14, 14, 512)       0         
+_________________________________________________________________
+block5_conv1 (Conv2D)        (None, 14, 14, 512)       2359808   
+_________________________________________________________________
+block5_conv2 (Conv2D)        (None, 14, 14, 512)       2359808   
+_________________________________________________________________
+block5_conv3 (Conv2D)        (None, 14, 14, 512)       2359808   
+_________________________________________________________________
+block5_pool (MaxPooling2D)   (None, 7, 7, 512)         0         
+_________________________________________________________________
+flatten (Flatten)            (None, 25088)             0         
+_________________________________________________________________
+dense (Dense)                (None, 2)                 50178     
+=================================================================
+Total params: 14,764,866
+Trainable params: 50,178
+Non-trainable params: 14,714,688
+_________________________________________________________________
+
+[2022-01-19 22:04:23,748: INFO: callbacks]: Saved callbacks are now ready for use.
+[2022-01-19 22:10:39,271: ERROR: stage_04_train]: name 'os' is not defined
+Traceback (most recent call last):
+  File "src/stage_04_train.py", line 80, in <module>
+    train_model(config_path=parsed_args.config, params_path=parsed_args.params)
+  File "src/stage_04_train.py", line 67, in train_model
+    model_file_path = get_unique_path_to_save_model(trained_model_dir)
+  File "c:\users\amiti\desktop\mlops\dl\dvc-dl-tf\src\utils\models.py", line 71, in get_unique_path_to_save_model
+    unique_model_path = os.path.join(trained_model_dir, unique_model_name)
+NameError: name 'os' is not defined
+[2022-01-19 22:11:10,449: INFO: stage_04_train]: 
+********************
+[2022-01-19 22:11:10,449: INFO: stage_04_train]: >>>>> stage prepare_callback started <<<<<
+[2022-01-19 22:11:10,464: INFO: common]: yaml file: configs/config.yaml loaded successfully
+[2022-01-19 22:11:10,464: INFO: common]: yaml file: params.yaml loaded successfully
+[2022-01-19 22:11:10,464: INFO: common]: created directory at: artifacts\model
+[2022-01-19 22:11:12,469: INFO: models]: Untrained model is read from : artifacts\base_model\updated_base_model.h5
+[2022-01-19 22:11:12,469: INFO: models]: Untrained full model summary is Model: "model"
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #   
+=================================================================
+input_1 (InputLayer)         [(None, 224, 224, 3)]     0         
+_________________________________________________________________
+block1_conv1 (Conv2D)        (None, 224, 224, 64)      1792      
+_________________________________________________________________
+block1_conv2 (Conv2D)        (None, 224, 224, 64)      36928     
+_________________________________________________________________
+block1_pool (MaxPooling2D)   (None, 112, 112, 64)      0         
+_________________________________________________________________
+block2_conv1 (Conv2D)        (None, 112, 112, 128)     73856     
+_________________________________________________________________
+block2_conv2 (Conv2D)        (None, 112, 112, 128)     147584    
+_________________________________________________________________
+block2_pool (MaxPooling2D)   (None, 56, 56, 128)       0         
+_________________________________________________________________
+block3_conv1 (Conv2D)        (None, 56, 56, 256)       295168    
+_________________________________________________________________
+block3_conv2 (Conv2D)        (None, 56, 56, 256)       590080    
+_________________________________________________________________
+block3_conv3 (Conv2D)        (None, 56, 56, 256)       590080    
+_________________________________________________________________
+block3_pool (MaxPooling2D)   (None, 28, 28, 256)       0         
+_________________________________________________________________
+block4_conv1 (Conv2D)        (None, 28, 28, 512)       1180160   
+_________________________________________________________________
+block4_conv2 (Conv2D)        (None, 28, 28, 512)       2359808   
+_________________________________________________________________
+block4_conv3 (Conv2D)        (None, 28, 28, 512)       2359808   
+_________________________________________________________________
+block4_pool (MaxPooling2D)   (None, 14, 14, 512)       0         
+_________________________________________________________________
+block5_conv1 (Conv2D)        (None, 14, 14, 512)       2359808   
+_________________________________________________________________
+block5_conv2 (Conv2D)        (None, 14, 14, 512)       2359808   
+_________________________________________________________________
+block5_conv3 (Conv2D)        (None, 14, 14, 512)       2359808   
+_________________________________________________________________
+block5_pool (MaxPooling2D)   (None, 7, 7, 512)         0         
+_________________________________________________________________
+flatten (Flatten)            (None, 25088)             0         
+_________________________________________________________________
+dense (Dense)                (None, 2)                 50178     
+=================================================================
+Total params: 14,764,866
+Trainable params: 50,178
+Non-trainable params: 14,714,688
+_________________________________________________________________
+
+[2022-01-19 22:11:13,641: INFO: callbacks]: Saved callbacks are now ready for use.
+[2022-01-19 22:14:29,186: INFO: stage_04_train]: The trained model is saved at:
+ artifacts\model\model.h5_at_Wed_Jan_19_22.14.29_2022_.h5
+[2022-01-19 22:14:29,186: INFO: stage_04_train]: >>>>> stage 3 completed!<<<<<
+
+[2022-01-19 22:34:53,800: INFO: stage_04_train]: 
+********************
+[2022-01-19 22:34:53,800: INFO: stage_04_train]: >>>>> stage prepare_callback started <<<<<
+[2022-01-19 22:34:53,816: INFO: common]: yaml file: configs/config.yaml loaded successfully
+[2022-01-19 22:34:53,816: INFO: common]: yaml file: params.yaml loaded successfully
+[2022-01-19 22:34:53,816: INFO: common]: created directory at: artifacts\model
+[2022-01-19 22:34:58,165: INFO: models]: Untrained model is read from : artifacts\base_model\updated_base_model.h5
+[2022-01-19 22:34:58,165: INFO: models]: Untrained full model summary is Model: "model"
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #   
+=================================================================
+input_1 (InputLayer)         [(None, 224, 224, 3)]     0         
+_________________________________________________________________
+block1_conv1 (Conv2D)        (None, 224, 224, 64)      1792      
+_________________________________________________________________
+block1_conv2 (Conv2D)        (None, 224, 224, 64)      36928     
+_________________________________________________________________
+block1_pool (MaxPooling2D)   (None, 112, 112, 64)      0         
+_________________________________________________________________
+block2_conv1 (Conv2D)        (None, 112, 112, 128)     73856     
+_________________________________________________________________
+block2_conv2 (Conv2D)        (None, 112, 112, 128)     147584    
+_________________________________________________________________
+block2_pool (MaxPooling2D)   (None, 56, 56, 128)       0         
+_________________________________________________________________
+block3_conv1 (Conv2D)        (None, 56, 56, 256)       295168    
+_________________________________________________________________
+block3_conv2 (Conv2D)        (None, 56, 56, 256)       590080    
+_________________________________________________________________
+block3_conv3 (Conv2D)        (None, 56, 56, 256)       590080    
+_________________________________________________________________
+block3_pool (MaxPooling2D)   (None, 28, 28, 256)       0         
+_________________________________________________________________
+block4_conv1 (Conv2D)        (None, 28, 28, 512)       1180160   
+_________________________________________________________________
+block4_conv2 (Conv2D)        (None, 28, 28, 512)       2359808   
+_________________________________________________________________
+block4_conv3 (Conv2D)        (None, 28, 28, 512)       2359808   
+_________________________________________________________________
+block4_pool (MaxPooling2D)   (None, 14, 14, 512)       0         
+_________________________________________________________________
+block5_conv1 (Conv2D)        (None, 14, 14, 512)       2359808   
+_________________________________________________________________
+block5_conv2 (Conv2D)        (None, 14, 14, 512)       2359808   
+_________________________________________________________________
+block5_conv3 (Conv2D)        (None, 14, 14, 512)       2359808   
+_________________________________________________________________
+block5_pool (MaxPooling2D)   (None, 7, 7, 512)         0         
+_________________________________________________________________
+flatten (Flatten)            (None, 25088)             0         
+_________________________________________________________________
+dense (Dense)                (None, 2)                 50178     
+=================================================================
+Total params: 14,764,866
+Trainable params: 50,178
+Non-trainable params: 14,714,688
+_________________________________________________________________
+
+[2022-01-19 22:34:59,225: INFO: callbacks]: Saved callbacks are now ready for use.
+[2022-01-19 22:41:17,720: INFO: stage_04_train]: The trained model is saved at:
+ artifacts\model\model.h5_at_Wed_Jan_19_22.41.17_2022_.h5
+[2022-01-19 22:41:17,720: INFO: stage_04_train]: >>>>> stage 3 completed!<<<<<
+
+[2022-01-19 22:41:23,202: INFO: stage_03_prepare_callback]: 
+********************
+[2022-01-19 22:41:23,202: INFO: stage_03_prepare_callback]: >>>>> stage prepare model started <<<<<
+[2022-01-19 22:41:23,202: INFO: common]: yaml file: configs/config.yaml loaded successfully
+[2022-01-19 22:41:23,202: INFO: common]: created directory at: artifacts\tensorboard_log_dir
+[2022-01-19 22:41:23,202: INFO: common]: created directory at: artifacts\checkpoints
+[2022-01-19 22:41:23,210: INFO: common]: created directory at: artifacts\callbacks
+[2022-01-19 22:41:23,790: INFO: callbacks]: Tensorboard callback is saved at artifacts\callbacks\tensorboard.cb.cb
+[2022-01-19 22:41:23,795: INFO: callbacks]: Checkpoint callbacks are saved at artifacts\callbacks\checkpoint.cb.cb as binay file.
+[2022-01-19 22:41:23,795: INFO: stage_03_prepare_callback]: >>>>> stage 2 completed!<<<<<
+
+[2022-01-19 22:41:27,580: INFO: stage_02_prepare_model]: 
+********************
+[2022-01-19 22:41:27,580: INFO: stage_02_prepare_model]: >>>>> stage preare model started <<<<<
+[2022-01-19 22:41:27,580: INFO: common]: yaml file: configs/config.yaml loaded successfully
+[2022-01-19 22:41:27,580: INFO: common]: yaml file: params.yaml loaded successfully
+[2022-01-19 22:41:27,580: INFO: common]: created directory at: artifacts\base_model
+[2022-01-19 22:41:29,309: INFO: models]: full model summary Model: "vgg16"
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #   
+=================================================================
+input_1 (InputLayer)         [(None, 224, 224, 3)]     0         
+_________________________________________________________________
+block1_conv1 (Conv2D)        (None, 224, 224, 64)      1792      
+_________________________________________________________________
+block1_conv2 (Conv2D)        (None, 224, 224, 64)      36928     
+_________________________________________________________________
+block1_pool (MaxPooling2D)   (None, 112, 112, 64)      0         
+_________________________________________________________________
+block2_conv1 (Conv2D)        (None, 112, 112, 128)     73856     
+_________________________________________________________________
+block2_conv2 (Conv2D)        (None, 112, 112, 128)     147584    
+_________________________________________________________________
+block2_pool (MaxPooling2D)   (None, 56, 56, 128)       0         
+_________________________________________________________________
+block3_conv1 (Conv2D)        (None, 56, 56, 256)       295168    
+_________________________________________________________________
+block3_conv2 (Conv2D)        (None, 56, 56, 256)       590080    
+_________________________________________________________________
+block3_conv3 (Conv2D)        (None, 56, 56, 256)       590080    
+_________________________________________________________________
+block3_pool (MaxPooling2D)   (None, 28, 28, 256)       0         
+_________________________________________________________________
+block4_conv1 (Conv2D)        (None, 28, 28, 512)       1180160   
+_________________________________________________________________
+block4_conv2 (Conv2D)        (None, 28, 28, 512)       2359808   
+_________________________________________________________________
+block4_conv3 (Conv2D)        (None, 28, 28, 512)       2359808   
+_________________________________________________________________
+block4_pool (MaxPooling2D)   (None, 14, 14, 512)       0         
+_________________________________________________________________
+block5_conv1 (Conv2D)        (None, 14, 14, 512)       2359808   
+_________________________________________________________________
+block5_conv2 (Conv2D)        (None, 14, 14, 512)       2359808   
+_________________________________________________________________
+block5_conv3 (Conv2D)        (None, 14, 14, 512)       2359808   
+_________________________________________________________________
+block5_pool (MaxPooling2D)   (None, 7, 7, 512)         0         
+=================================================================
+Total params: 14,714,688
+Trainable params: 14,714,688
+Non-trainable params: 0
+_________________________________________________________________
+
+[2022-01-19 22:41:29,309: WARNING: saving_utils]: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.
+[2022-01-19 22:41:29,419: INFO: models]: VGG16 is successfully loaded and saved at artifacts\base_model\base_model.h5
+[2022-01-19 22:41:29,433: INFO: models]: Custom layers to base model added and compiled.
+[2022-01-19 22:41:29,538: INFO: stage_02_prepare_model]: full untrained model is saved at artifacts\base_model\updated_base_model.h5
+[2022-01-19 22:41:29,538: INFO: stage_02_prepare_model]: >>>>> stage preare model completed! : Base model is created.<<<<<
+
+[2022-01-19 22:41:36,698: INFO: stage_01_get_data]: 
+********************
+[2022-01-19 22:41:36,698: INFO: stage_01_get_data]: >>>>> stage STAGE_NAME started <<<<<
+[2022-01-19 22:41:36,698: INFO: common]: yaml file: configs/config.yaml loaded successfully
+[2022-01-19 22:41:36,698: INFO: common]: yaml file: params.yaml loaded successfully
+[2022-01-19 22:41:36,714: INFO: common]: created directory at: data/cat
+[2022-01-19 22:42:16,965: INFO: common]: Copying succeeded!
+[2022-01-19 22:42:16,965: INFO: common]: created directory at: data/dog
+[2022-01-19 22:43:38,094: INFO: common]: Copying succeeded!
+[2022-01-19 22:43:38,094: INFO: stage_01_get_data]: >>>>> stage STAGE_NAME completed!<<<<<
+

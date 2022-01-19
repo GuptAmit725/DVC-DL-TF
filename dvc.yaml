@@ -36,3 +36,19 @@
       outs:
         - artifacts/callbacks/checkpoint.cb.cb
         - artifacts/callbacks/tensorboard.cb.cb
+
+   train_model:
+      cmd: python src/stage_04_train.py --config=configs/config.yaml
+      deps:
+        - src/stage_04_train.py
+        - src/utils/callbacks.py
+        - src/utils/common.py
+        - src/utils/models.py
+        - configs/config.yaml
+        - params.yaml
+      params:
+        - IMAGE_SIZE
+        - BATCH_SIZE
+        - EPOCHS
+        - LEARNING_RATE
+        - AUGMENTATION

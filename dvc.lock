@@ -21,3 +21,32 @@ stages:
       md5: 1a38b0de8193bb65118c33b4aba4bc21.dir
       size: 310001554
       nfiles: 12500
+  prepare_model:
+    cmd: python src/stage_02_prepare_model.py --config=configs/config.yaml
+    deps:
+    - path: configs/config.yaml
+      md5: 10b0f94c25d02b6e33d273b612efb9a1
+      size: 514
+    - path: src/stage_02_prepare_model.py
+      md5: 79bfdeb6d15a1a383383d0773383afd2
+      size: 2348
+    - path: src/utils/common.py
+      md5: 8ff356bfd56bf6d710bc6600d85db293
+      size: 1059
+    - path: src/utils/models.py
+      md5: e9fbcda278888bd0e32434321fbf0a2f
+      size: 1805
+    params:
+      params.yaml:
+        IMAGE_SIZE:
+        - 224
+        - 224
+        - 3
+        LEARNING_RATE: 0.0001
+    outs:
+    - path: artifacts/base_model/base_model.h5
+      md5: cf74b1f4b01e207b8fa768ab6d312f15
+      size: 58920272
+    - path: artifacts/base_model/updated_base_model.h5
+      md5: 09eff8630b846412b7849660b6a17a0c
+      size: 59132008

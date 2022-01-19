@@ -1,13 +1,12 @@
 import argparse
 import os
-import shutil
 from tqdm import tqdm
 import logging
 from src.utils.common import read_yaml, create_directories,copy_files
-import random
+from src.utils import get_VGG16_model, prepare_full_model
 
 
-STAGE = "STAGE_NAME" ## <<< change stage name
+STAGE = "preare model" ## <<< change stage name
 
 logging.basicConfig(
     filename=os.path.join("logs", 'running_logs.log'),
@@ -17,16 +16,23 @@ logging.basicConfig(
     )
 
 
-def get_data(config_path, params_path):
+def prepare_model(config_path, params_path):
     ## read config files
     config = read_yaml(config_path)
     params = read_yaml(params_path)
-    source_download_dirs = config['source_download_dirs']
-    local_data_dirs = config['local_data_dirs']
 
-    for source_download_dir, local_data_dir in tqdm(zip(source_download_dirs, local_data_dirs),total=2,desc="list of the folders",colour='red'):
-        create_directories([local_data_dir])
-        copy_files(source_download_dir, local_data_dir)
+    artifacts = config['artifacts']
+    artifacts_dir = artifacts['ARTIFACTS_DIR']
+    base_model_dir = artifacts['BASE_MODEL_DIR']
+    base_model_name = artifacts['BASE_MODEL_NAME']
+    base_model_dir_path = os.apth.join(artifacts_dir,base_model_dir)
+    create_directories([base_model_dir_path])
+
+    base_model_path = os.path.join(base_model_dir_path, base_model_name)
+    base_model = get_VGG16_model()
+    full_model = prepare_full_model()
+    updated_base_model_path = os.path.join(base_model_dir_path, artifacts['UPDATED_BASE_MODEL_NAME'])
+    full_model.save(updated_base_model_path)
 
 
 if __name__ == '__main__':

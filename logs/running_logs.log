@@ -475,3 +475,109 @@ _________________________________________________________________
 [2022-01-19 15:32:23,768: INFO: stage_02_prepare_model]: full untrained model is saved at artifacts\base_model\updated_base_model.h5
 [2022-01-19 15:32:23,768: INFO: stage_02_prepare_model]: >>>>> stage preare model completed! : Base model is created.<<<<<
 
+[2022-01-19 16:23:16,912: INFO: stage_03_prepare_callback]: 
+********************
+[2022-01-19 16:23:16,912: INFO: stage_03_prepare_callback]: >>>>> stage prepare_callback started <<<<<
+[2022-01-19 16:23:16,912: INFO: common]: yaml file: configs/config.yaml loaded successfully
+[2022-01-19 16:23:16,912: INFO: common]: yaml file: params.yaml loaded successfully
+[2022-01-19 16:23:16,912: ERROR: stage_03_prepare_callback]: 'CALLBACK_DIR'
+Traceback (most recent call last):
+  File "src/stage_03_prepare_callback.py", line 49, in <module>
+    prepare_callback(config_path=parsed_args.config, params_path=parsed_args.params)
+  File "src/stage_03_prepare_callback.py", line 30, in prepare_callback
+    callback_dir = os.path.join(artifacts_dir, artifacts['CALLBACK_DIR'])
+KeyError: 'CALLBACK_DIR'
+[2022-01-19 16:24:03,075: INFO: stage_03_prepare_callback]: 
+********************
+[2022-01-19 16:24:03,075: INFO: stage_03_prepare_callback]: >>>>> stage prepare_callback started <<<<<
+[2022-01-19 16:24:03,075: INFO: common]: yaml file: configs/config.yaml loaded successfully
+[2022-01-19 16:24:03,075: INFO: common]: yaml file: params.yaml loaded successfully
+[2022-01-19 16:24:03,075: INFO: common]: created directory at: tensorboard_log_dir
+[2022-01-19 16:24:03,075: INFO: common]: created directory at: checkpoint_dir
+[2022-01-19 16:24:03,075: INFO: common]: created directory at: callback_dir
+[2022-01-19 16:24:03,114: ERROR: stage_03_prepare_callback]: module 'os' has no attribute 'apth'
+Traceback (most recent call last):
+  File "src/stage_03_prepare_callback.py", line 49, in <module>
+    prepare_callback(config_path=parsed_args.config, params_path=parsed_args.params)
+  File "src/stage_03_prepare_callback.py", line 37, in prepare_callback
+    create_and_save_tb_callbacks(callback_dir, tensorboard_log_dir)
+  File "c:\users\amiti\desktop\mlops\dl\dvc-dl-tf\src\utils\callbacks.py", line 19, in create_and_save_tb_callbacks
+    tb_callback_path = os.apth.join(callbacks_dir,"tensorboard.cb.cb")
+AttributeError: module 'os' has no attribute 'apth'
+[2022-01-19 16:24:24,127: INFO: stage_03_prepare_callback]: 
+********************
+[2022-01-19 16:24:24,127: INFO: stage_03_prepare_callback]: >>>>> stage prepare_callback started <<<<<
+[2022-01-19 16:24:24,127: INFO: common]: yaml file: configs/config.yaml loaded successfully
+[2022-01-19 16:24:24,127: INFO: common]: yaml file: params.yaml loaded successfully
+[2022-01-19 16:24:24,127: INFO: common]: created directory at: tensorboard_log_dir
+[2022-01-19 16:24:24,127: INFO: common]: created directory at: checkpoint_dir
+[2022-01-19 16:24:24,127: INFO: common]: created directory at: callback_dir
+[2022-01-19 16:24:24,158: ERROR: stage_03_prepare_callback]: [Errno 2] No such file or directory: 'artifacts\\callbacks\\tensorboard.cb.cb'
+Traceback (most recent call last):
+  File "src/stage_03_prepare_callback.py", line 49, in <module>
+    prepare_callback(config_path=parsed_args.config, params_path=parsed_args.params)
+  File "src/stage_03_prepare_callback.py", line 37, in prepare_callback
+    create_and_save_tb_callbacks(callback_dir, tensorboard_log_dir)
+  File "c:\users\amiti\desktop\mlops\dl\dvc-dl-tf\src\utils\callbacks.py", line 20, in create_and_save_tb_callbacks
+    joblib.dump(tensorboard_callbacks, tb_callback_path)
+  File "C:\Users\amiti\Desktop\MLops\DL\DVC-DL-TF\env\lib\site-packages\joblib\numpy_pickle.py", line 481, in dump
+    with open(filename, 'wb') as f:
+FileNotFoundError: [Errno 2] No such file or directory: 'artifacts\\callbacks\\tensorboard.cb.cb'
+[2022-01-19 16:28:14,188: INFO: stage_03_prepare_callback]: 
+********************
+[2022-01-19 16:28:14,188: INFO: stage_03_prepare_callback]: >>>>> stage prepare_callback started <<<<<
+[2022-01-19 16:28:14,188: INFO: common]: yaml file: configs/config.yaml loaded successfully
+[2022-01-19 16:28:14,188: INFO: common]: created directory at: tensorboard_log_dir
+[2022-01-19 16:28:14,188: INFO: common]: created directory at: checkpoint_dir
+[2022-01-19 16:28:14,188: INFO: common]: created directory at: callback_dir
+[2022-01-19 16:28:14,219: ERROR: stage_03_prepare_callback]: [Errno 2] No such file or directory: 'artifacts\\callbacks\\tensorboard.cb.cb'
+Traceback (most recent call last):
+  File "src/stage_03_prepare_callback.py", line 48, in <module>
+    prepare_callback(config_path=parsed_args.config, params_path=parsed_args.params)
+  File "src/stage_03_prepare_callback.py", line 36, in prepare_callback
+    create_and_save_tb_callbacks(callback_dir, tensorboard_log_dir)
+  File "c:\users\amiti\desktop\mlops\dl\dvc-dl-tf\src\utils\callbacks.py", line 21, in create_and_save_tb_callbacks
+    joblib.dump(tensorboard_callbacks, tb_callback_path)
+  File "C:\Users\amiti\Desktop\MLops\DL\DVC-DL-TF\env\lib\site-packages\joblib\numpy_pickle.py", line 481, in dump
+    with open(filename, 'wb') as f:
+FileNotFoundError: [Errno 2] No such file or directory: 'artifacts\\callbacks\\tensorboard.cb.cb'
+[2022-01-19 16:30:53,572: INFO: stage_03_prepare_callback]: 
+********************
+[2022-01-19 16:30:53,572: INFO: stage_03_prepare_callback]: >>>>> stage prepare_callback started <<<<<
+[2022-01-19 16:30:53,587: INFO: common]: yaml file: configs/config.yaml loaded successfully
+[2022-01-19 16:30:53,587: INFO: common]: created directory at: tensorboard_log_dir
+[2022-01-19 16:30:53,587: INFO: common]: created directory at: checkpoint_dir
+[2022-01-19 16:30:53,587: INFO: common]: created directory at: callbacks
+[2022-01-19 16:30:53,603: ERROR: stage_03_prepare_callback]: [Errno 2] No such file or directory: 'artifacts\\callbacks\\tensorboard.cb.cb'
+Traceback (most recent call last):
+  File "src/stage_03_prepare_callback.py", line 48, in <module>
+    prepare_callback(config_path=parsed_args.config, params_path=parsed_args.params)
+  File "src/stage_03_prepare_callback.py", line 36, in prepare_callback
+    create_and_save_tb_callbacks(callback_dir, tensorboard_log_dir)
+  File "c:\users\amiti\desktop\mlops\dl\dvc-dl-tf\src\utils\callbacks.py", line 21, in create_and_save_tb_callbacks
+    joblib.dump(tensorboard_callbacks, tb_callback_path)
+  File "C:\Users\amiti\Desktop\MLops\DL\DVC-DL-TF\env\lib\site-packages\joblib\numpy_pickle.py", line 481, in dump
+    with open(filename, 'wb') as f:
+FileNotFoundError: [Errno 2] No such file or directory: 'artifacts\\callbacks\\tensorboard.cb.cb'
+[2022-01-19 16:40:05,037: INFO: stage_03_prepare_callback]: 
+********************
+[2022-01-19 16:40:05,037: INFO: stage_03_prepare_callback]: >>>>> stage prepare_callback started <<<<<
+[2022-01-19 16:40:05,037: INFO: common]: yaml file: configs/config.yaml loaded successfully
+[2022-01-19 16:40:05,037: ERROR: stage_03_prepare_callback]: name 'callbacks_dir' is not defined
+Traceback (most recent call last):
+  File "src/stage_03_prepare_callback.py", line 48, in <module>
+    prepare_callback(config_path=parsed_args.config, params_path=parsed_args.params)
+  File "src/stage_03_prepare_callback.py", line 33, in prepare_callback
+    callbacks_dir
+NameError: name 'callbacks_dir' is not defined
+[2022-01-19 16:40:25,717: INFO: stage_03_prepare_callback]: 
+********************
+[2022-01-19 16:40:25,717: INFO: stage_03_prepare_callback]: >>>>> stage prepare_callback started <<<<<
+[2022-01-19 16:40:25,717: INFO: common]: yaml file: configs/config.yaml loaded successfully
+[2022-01-19 16:40:25,731: INFO: common]: created directory at: artifacts\tensorboard_log_dir
+[2022-01-19 16:40:25,731: INFO: common]: created directory at: artifacts\checkpoints
+[2022-01-19 16:40:25,731: INFO: common]: created directory at: artifacts\callbacks
+[2022-01-19 16:40:25,749: INFO: callbacks]: Tensorboard callback is saved at artifacts\callbacks\tensorboard.cb.cb
+[2022-01-19 16:40:25,749: INFO: callbacks]: Checkpoint callbacks are saved at artifacts\callbacks\tensorboard.cb.cb as binay file.
+[2022-01-19 16:40:25,749: INFO: stage_03_prepare_callback]: >>>>> stage 2 completed!<<<<<
+

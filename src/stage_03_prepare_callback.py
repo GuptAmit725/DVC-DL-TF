@@ -22,20 +22,19 @@ logging.basicConfig(
 def prepare_callback(config_path, params_path):
     ## read config files
     config = read_yaml(config_path)
-    params = read_yaml(params_path)
     artifacts = config['artifacts']
     artifacts_dir = artifacts['ARTIFACTS_DIR']
     tensorboard_log_dir = os.path.join(artifacts_dir, artifacts['TENSORBOARD_ROOT_LOG_DIR'])
     checkpoint_dir = os.path.join(artifacts_dir, artifacts['CHECKPOINT_DIR'])
-    callback_dir = os.path.join(artifacts_dir, artifacts['CALLBACK_DIR'])
+    callback_dir = os.path.join(artifacts_dir, artifacts['CALLBACKS_DIR'])
     create_directories([
-        'tensorboard_log_dir',
-        'checkpoint_dir',
-        'callback_dir'
+        tensorboard_log_dir,
+        checkpoint_dir,
+        callback_dir
     ])
     #tensorboard callbacks
     create_and_save_tb_callbacks(callback_dir, tensorboard_log_dir)
-    create_checkpointing_callbacks(checkpoint_dir)
+    create_checkpointing_callbacks(callback_dir,checkpoint_dir)
 
 if __name__ == '__main__':
     args = argparse.ArgumentParser()

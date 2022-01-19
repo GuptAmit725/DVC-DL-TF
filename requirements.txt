@@ -4,3 +4,4 @@ dvc
 tensorflow==2.5.0
 black
 -e .
+joblib

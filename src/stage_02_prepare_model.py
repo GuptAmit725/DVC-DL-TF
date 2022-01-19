@@ -29,8 +29,18 @@ def prepare_model(config_path, params_path):
     create_directories([base_model_dir_path])
 
     base_model_path = os.path.join(base_model_dir_path, base_model_name)
-    base_model = get_VGG16_model()
-    full_model = prepare_full_model()
+    base_model = get_VGG16_model(
+                                    input_shape=params['IMAGE_SIZE'],
+                                    model_path=base_model_path
+                                )
+
+    full_model = prepare_full_model(base_model,
+                                    CLASSES=2,
+                                    freeze_all=True,
+                                    freeze_till=None,
+                                    lr=params['LEARNING_RATE']
+                                    )
+
     updated_base_model_path = os.path.join(base_model_dir_path, artifacts['UPDATED_BASE_MODEL_NAME'])
     full_model.save(updated_base_model_path)
 

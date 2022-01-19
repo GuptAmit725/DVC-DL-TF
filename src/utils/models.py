@@ -1,5 +1,16 @@
 import tensorflow as tf
 import logging
+import io
+
+
+def get_model_summary(model):
+    with io.StringIO() as stream:
+        model.summary(
+            print_fn=lambda x : stream.write(f'{x}\n')
+        )
+        summary_str = stream.getvalue()
+    return summary_str
+
 
 def get_VGG16_model(input_shape:list,
                     model_path:str
@@ -8,9 +19,11 @@ def get_VGG16_model(input_shape:list,
                                         weights='imagenet',
                                         include_top = False
                                         )
+    logging.info(f'full model summary {get_model_summary(model)}')
     model.save(model_path)
     logging.info(f"VGG16 is successfully loaded and saved at {model_path}")
     return model
+
 
 def prepare_full_model( base_model,
                         lr,
@@ -39,5 +52,4 @@ def prepare_full_model( base_model,
 
     logging.info(f"Custom layers to base model added and compiled.")
 
-    full_model.summary()
     return full_model

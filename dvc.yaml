@@ -10,3 +10,14 @@
       outs:
         - data/dog
         - data/cat
+   prepare_model:
+      cmd: python src/stage_02_prepare_model.py --config=configs/config.yaml
+      deps:
+        - src/stage_02_prepare_model.py
+        - src/utils/common.py
+        - configs/config.yaml
+      params:
+        -
+      outs:
+        - data/dog
+        - data/cat

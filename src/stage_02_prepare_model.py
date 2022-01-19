@@ -3,7 +3,7 @@ import os
 from tqdm import tqdm
 import logging
 from src.utils.common import read_yaml, create_directories,copy_files
-from src.utils import get_VGG16_model, prepare_full_model
+from src.utils.models import get_VGG16_model, prepare_full_model
 
 
 STAGE = "preare model" ## <<< change stage name
@@ -25,7 +25,7 @@ def prepare_model(config_path, params_path):
     artifacts_dir = artifacts['ARTIFACTS_DIR']
     base_model_dir = artifacts['BASE_MODEL_DIR']
     base_model_name = artifacts['BASE_MODEL_NAME']
-    base_model_dir_path = os.apth.join(artifacts_dir,base_model_dir)
+    base_model_dir_path = os.path.join(artifacts_dir,base_model_dir)
     create_directories([base_model_dir_path])
 
     base_model_path = os.path.join(base_model_dir_path, base_model_name)
@@ -35,14 +35,15 @@ def prepare_model(config_path, params_path):
                                 )
 
     full_model = prepare_full_model(base_model,
+                                    lr=params['LEARNING_RATE'],
                                     CLASSES=2,
                                     freeze_all=True,
-                                    freeze_till=None,
-                                    lr=params['LEARNING_RATE']
+                                    freeze_till=None
                                     )
 
-    updated_base_model_path = os.path.join(base_model_dir_path, artifacts['UPDATED_BASE_MODEL_NAME'])
-    full_model.save(updated_base_model_path)
+    updated_full_model_path = os.path.join(base_model_dir_path, artifacts['UPDATED_BASE_MODEL_NAME'])
+    full_model.save(updated_full_model_path)
+    logging.info(f"full untrained model is saved at {updated_full_model_path}")
 
 
 if __name__ == '__main__':
